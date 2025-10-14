@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "github.com/khbdev/grpc-proto/proto/admin;admin";
+
+
+
+
+message Admin {
+  uint64 id = 1;
+  string username = 2;
+  string password = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message CreateAdminRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message CreateAdminResponse {
+  Admin admin = 1;
+}
+
+message GetAdminListRequest {}
+
+message GetAdminListResponse {
+  repeated Admin admins = 1;
+}
+
+message GetAdminByIDRequest {
+  uint64 id = 1;
+}
+
+message GetAdminByIDResponse {
+  Admin admin = 1;
+}
+
+message UpdateAdminRequest {
+  uint64 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message UpdateAdminResponse {
+  Admin admin = 1;
+}
+
+message DeleteAdminRequest {
+  uint64 id = 1;
+}
+
+message DeleteAdminResponse {
+  bool success = 1;
+}
+
+// ======== VerifyAdmin (Auth uchun) ========
+
+message VerifyAdminRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message VerifyAdminResponse {
+  bool valid = 1; // true agar username/password to‘g‘ri bo‘lsa
+}
+
+// ======== Service ========
+
+service AdminService {
+  rpc CreateAdmin(CreateAdminRequest) returns (CreateAdminResponse);
+  rpc GetAdminList(GetAdminListRequest) returns (GetAdminListResponse);
+  rpc GetAdminByID(GetAdminByIDRequest) returns (GetAdminByIDResponse);
+  rpc UpdateAdmin(UpdateAdminRequest) returns (UpdateAdminResponse);
+  rpc DeleteAdmin(DeleteAdminRequest) returns (DeleteAdminResponse);
+
+  // Auth service foydalanadi
+  rpc VerifyAdmin(VerifyAdminRequest) returns (VerifyAdminResponse);
+}
