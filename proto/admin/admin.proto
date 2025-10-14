@@ -6,7 +6,6 @@ option go_package = "github.com/khbdev/grpc-proto/proto/admin;admin";
 
 
 
-
 message Admin {
   uint64 id = 1;
   string username = 2;
