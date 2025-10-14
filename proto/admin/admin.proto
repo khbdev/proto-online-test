@@ -56,7 +56,7 @@ message DeleteAdminResponse {
   bool success = 1;
 }
 
-// ======== VerifyAdmin (Auth uchun) ========
+
 
 message VerifyAdminRequest {
   string username = 1;
@@ -64,10 +64,10 @@ message VerifyAdminRequest {
 }
 
 message VerifyAdminResponse {
-  bool valid = 1; // true agar username/password to‘g‘ri bo‘lsa
+  bool valid = 1; 
 }
 
-// ======== Service ========
+
 
 service AdminService {
   rpc CreateAdmin(CreateAdminRequest) returns (CreateAdminResponse);
@@ -76,6 +76,6 @@ service AdminService {
   rpc UpdateAdmin(UpdateAdminRequest) returns (UpdateAdminResponse);
   rpc DeleteAdmin(DeleteAdminRequest) returns (DeleteAdminResponse);
 
-  // Auth service foydalanadi
+
   rpc VerifyAdmin(VerifyAdminRequest) returns (VerifyAdminResponse);
 }
