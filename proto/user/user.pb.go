@@ -825,7 +825,7 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\n" +
 	"UpdateUser\x12\x17.user.UpdateUserRequest\x1a\x18.user.UpdateUserResponse\x12?\n" +
 	"\n" +
-	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponseB7Z5github.com/khbdev/proto-online-test/proto/user;userpbb\x06proto3"
+	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponseB0Z.github.com/khbdev/grps-proto/proto/user;userpbb\x06proto3"
 
 var (
 	file_proto_user_user_proto_rawDescOnce sync.Once
