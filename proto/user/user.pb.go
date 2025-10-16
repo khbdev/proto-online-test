@@ -34,8 +34,10 @@ type User struct {
 	Javoblar        string                 `protobuf:"bytes,9,opt,name=javoblar,proto3" json:"javoblar,omitempty"`
 	TogriJavoblar   int32                  `protobuf:"varint,10,opt,name=togri_javoblar,json=togriJavoblar,proto3" json:"togri_javoblar,omitempty"`
 	NatogriJavoblar int32                  `protobuf:"varint,11,opt,name=natogri_javoblar,json=natogriJavoblar,proto3" json:"natogri_javoblar,omitempty"`
-	CreatedAt       string                 `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt       string                 `protobuf:"bytes,13,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	ScorePercent    int32                  `protobuf:"varint,12,opt,name=score_percent,json=scorePercent,proto3" json:"score_percent,omitempty"` // qo‘shildi
+	Description     string                 `protobuf:"bytes,13,opt,name=description,proto3" json:"description,omitempty"`                        // qo‘shildi
+	CreatedAt       string                 `protobuf:"bytes,14,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt       string                 `protobuf:"bytes,15,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -147,6 +149,20 @@ func (x *User) GetNatogriJavoblar() int32 {
 	return 0
 }
 
+func (x *User) GetScorePercent() int32 {
+	if x != nil {
+		return x.ScorePercent
+	}
+	return 0
+}
+
+func (x *User) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 func (x *User) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
@@ -173,6 +189,8 @@ type CreateUserRequest struct {
 	Javoblar        string                 `protobuf:"bytes,8,opt,name=javoblar,proto3" json:"javoblar,omitempty"`
 	TogriJavoblar   int32                  `protobuf:"varint,9,opt,name=togri_javoblar,json=togriJavoblar,proto3" json:"togri_javoblar,omitempty"`
 	NatogriJavoblar int32                  `protobuf:"varint,10,opt,name=natogri_javoblar,json=natogriJavoblar,proto3" json:"natogri_javoblar,omitempty"`
+	ScorePercent    int32                  `protobuf:"varint,11,opt,name=score_percent,json=scorePercent,proto3" json:"score_percent,omitempty"` // qo‘shildi
+	Description     string                 `protobuf:"bytes,12,opt,name=description,proto3" json:"description,omitempty"`                        // qo‘shildi
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -275,6 +293,20 @@ func (x *CreateUserRequest) GetNatogriJavoblar() int32 {
 		return x.NatogriJavoblar
 	}
 	return 0
+}
+
+func (x *CreateUserRequest) GetScorePercent() int32 {
+	if x != nil {
+		return x.ScorePercent
+	}
+	return 0
+}
+
+func (x *CreateUserRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
 }
 
 type CreateUserResponse struct {
@@ -502,6 +534,8 @@ type UpdateUserRequest struct {
 	Javoblar        string                 `protobuf:"bytes,9,opt,name=javoblar,proto3" json:"javoblar,omitempty"`
 	TogriJavoblar   int32                  `protobuf:"varint,10,opt,name=togri_javoblar,json=togriJavoblar,proto3" json:"togri_javoblar,omitempty"`
 	NatogriJavoblar int32                  `protobuf:"varint,11,opt,name=natogri_javoblar,json=natogriJavoblar,proto3" json:"natogri_javoblar,omitempty"`
+	ScorePercent    int32                  `protobuf:"varint,12,opt,name=score_percent,json=scorePercent,proto3" json:"score_percent,omitempty"` // qo‘shildi
+	Description     string                 `protobuf:"bytes,13,opt,name=description,proto3" json:"description,omitempty"`                        // qo‘shildi
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -611,6 +645,20 @@ func (x *UpdateUserRequest) GetNatogriJavoblar() int32 {
 		return x.NatogriJavoblar
 	}
 	return 0
+}
+
+func (x *UpdateUserRequest) GetScorePercent() int32 {
+	if x != nil {
+		return x.ScorePercent
+	}
+	return 0
+}
+
+func (x *UpdateUserRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
 }
 
 type UpdateUserResponse struct {
@@ -749,7 +797,7 @@ var File_proto_user_user_proto protoreflect.FileDescriptor
 
 const file_proto_user_user_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/user/user.proto\x12\x04user\"\x83\x03\n" +
+	"\x15proto/user/user.proto\x12\x04user\"\xca\x03\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x1d\n" +
 	"\n" +
@@ -764,11 +812,13 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\bjavoblar\x18\t \x01(\tR\bjavoblar\x12%\n" +
 	"\x0etogri_javoblar\x18\n" +
 	" \x01(\x05R\rtogriJavoblar\x12)\n" +
-	"\x10natogri_javoblar\x18\v \x01(\x05R\x0fnatogriJavoblar\x12\x1d\n" +
+	"\x10natogri_javoblar\x18\v \x01(\x05R\x0fnatogriJavoblar\x12#\n" +
+	"\rscore_percent\x18\f \x01(\x05R\fscorePercent\x12 \n" +
+	"\vdescription\x18\r \x01(\tR\vdescription\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\f \x01(\tR\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\x0e \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\r \x01(\tR\tupdatedAt\"\xc2\x02\n" +
+	"updated_at\x18\x0f \x01(\tR\tupdatedAt\"\x89\x03\n" +
 	"\x11CreateUserRequest\x12\x1d\n" +
 	"\n" +
 	"first_name\x18\x01 \x01(\tR\tfirstName\x12\x1b\n" +
@@ -782,7 +832,9 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\bjavoblar\x18\b \x01(\tR\bjavoblar\x12%\n" +
 	"\x0etogri_javoblar\x18\t \x01(\x05R\rtogriJavoblar\x12)\n" +
 	"\x10natogri_javoblar\x18\n" +
-	" \x01(\x05R\x0fnatogriJavoblar\"4\n" +
+	" \x01(\x05R\x0fnatogriJavoblar\x12#\n" +
+	"\rscore_percent\x18\v \x01(\x05R\fscorePercent\x12 \n" +
+	"\vdescription\x18\f \x01(\tR\vdescription\"4\n" +
 	"\x12CreateUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
 	".user.UserR\x04user\"$\n" +
@@ -794,7 +846,7 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\x12GetAllUsersRequest\"7\n" +
 	"\x13GetAllUsersResponse\x12 \n" +
 	"\x05users\x18\x01 \x03(\v2\n" +
-	".user.UserR\x05users\"\xd2\x02\n" +
+	".user.UserR\x05users\"\x99\x03\n" +
 	"\x11UpdateUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x1d\n" +
 	"\n" +
@@ -809,7 +861,9 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"\bjavoblar\x18\t \x01(\tR\bjavoblar\x12%\n" +
 	"\x0etogri_javoblar\x18\n" +
 	" \x01(\x05R\rtogriJavoblar\x12)\n" +
-	"\x10natogri_javoblar\x18\v \x01(\x05R\x0fnatogriJavoblar\"4\n" +
+	"\x10natogri_javoblar\x18\v \x01(\x05R\x0fnatogriJavoblar\x12#\n" +
+	"\rscore_percent\x18\f \x01(\x05R\fscorePercent\x12 \n" +
+	"\vdescription\x18\r \x01(\tR\vdescription\"4\n" +
 	"\x12UpdateUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
 	".user.UserR\x04user\"#\n" +
