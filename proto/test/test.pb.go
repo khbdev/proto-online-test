@@ -1131,7 +1131,7 @@ const file_proto_test_test_proto_rawDesc = "" +
 	"\rGetAllOptions\x12\x16.google.protobuf.Empty\x1a\x1b.test.GetAllOptionsResponse\x127\n" +
 	"\fUpdateOption\x12\x19.test.UpdateOptionRequest\x1a\f.test.Option\x126\n" +
 	"\fDeleteOption\x12\x0e.test.OptionID\x1a\x16.google.protobuf.Empty\x12T\n" +
-	"\x17GetFullSectionStructure\x12\x1b.test.GetFullSectionRequest\x1a\x1c.test.GetFullSectionResponseB0Z.github.com/khbdev/grps-proto/proto/test;testpbb\x06proto3"
+	"\x17GetFullSectionStructure\x12\x1b.test.GetFullSectionRequest\x1a\x1c.test.GetFullSectionResponseB7Z5github.com/khbdev/proto-online-test/proto/test;testpbb\x06proto3"
 
 var (
 	file_proto_test_test_proto_rawDescOnce sync.Once

@@ -2,7 +2,8 @@ syntax = "proto3";
 
 package test;
 
-option go_package = "github.com/khbdev/grps-proto/proto/test;testpb";
+option go_package = "github.com/khbdev/proto-online-test/proto/test;testpb";
+
 
 import "google/protobuf/empty.proto";
 
