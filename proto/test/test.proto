@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package test;
+
+option go_package = "github.com/khbdev/grps-proto/proto/test;testpb";
+
+import "google/protobuf/empty.proto";
+
+// ======================
+// MODELLAR
+// ======================
+
+message Option {
+  uint64 id = 1;
+  uint64 question_id = 2;
+  string text = 3;
+  bool is_correct = 4;
+}
+
+message Question {
+  uint64 id = 1;
+  uint64 section_id = 2;
+  string text = 3;
+  repeated Option options = 4;
+}
+
+message Section {
+  uint64 id = 1;
+  string name = 2;
+  repeated Question questions = 3;
+}
+
+// ======================
+// REQUEST / RESPONSE
+// ======================
+
+// --- SECTION ---
+message SectionID {
+  uint64 id = 1;
+}
+
+message CreateSectionRequest {
+  string name = 1;
+}
+
+message UpdateSectionRequest {
+  uint64 id = 1;
+  string name = 2;
+}
+
+message GetSectionResponse {
+  Section section = 1;
+}
+
+message GetAllSectionsResponse {
+  repeated Section sections = 1;
+}
+
+// --- QUESTION ---
+message QuestionID {
+  uint64 id = 1;
+}
+
+message CreateQuestionRequest {
+  uint64 section_id = 1;
+  string text = 2;
+}
+
+message UpdateQuestionRequest {
+  uint64 id = 1;
+  uint64 section_id = 2;
+  string text = 3;
+}
+
+message GetQuestionResponse {
+  Question question = 1;
+}
+
+message GetAllQuestionsResponse {
+  repeated Question questions = 1;
+}
+
+// --- OPTION ---
+message OptionID {
+  uint64 id = 1;
+}
+
+message CreateOptionRequest {
+  uint64 question_id = 1;
+  string text = 2;
+  bool is_correct = 3;
+}
+
+message UpdateOptionRequest {
+  uint64 id = 1;
+  uint64 question_id = 2;
+  string text = 3;
+  bool is_correct = 4;
+}
+
+message GetOptionResponse {
+  Option option = 1;
+}
+
+message GetAllOptionsResponse {
+  repeated Option options = 1;
+}
+
+// --- FULL STRUCTURE ---
+message GetFullSectionRequest {
+  uint64 section_id = 1;
+}
+
+message GetFullSectionResponse {
+  Section section = 1;
+}
+
+// ======================
+// SERVICE
+// ======================
+
+service TestService {
+
+  // ===== SECTION CRUD =====
+  rpc CreateSection(CreateSectionRequest) returns (Section);
+  rpc GetSectionById(SectionID) returns (GetSectionResponse);
+  rpc GetAllSections(google.protobuf.Empty) returns (GetAllSectionsResponse);
+  rpc UpdateSection(UpdateSectionRequest) returns (Section);
+  rpc DeleteSection(SectionID) returns (google.protobuf.Empty);
+
+  // ===== QUESTION CRUD =====
+  rpc CreateQuestion(CreateQuestionRequest) returns (Question);
+  rpc GetQuestionById(QuestionID) returns (GetQuestionResponse);
+  rpc GetAllQuestions(google.protobuf.Empty) returns (GetAllQuestionsResponse);
+  rpc UpdateQuestion(UpdateQuestionRequest) returns (Question);
+  rpc DeleteQuestion(QuestionID) returns (google.protobuf.Empty);
+
+  // ===== OPTION CRUD =====
+  rpc CreateOption(CreateOptionRequest) returns (Option);
+  rpc GetOptionById(OptionID) returns (GetOptionResponse);
+  rpc GetAllOptions(google.protobuf.Empty) returns (GetAllOptionsResponse);
+  rpc UpdateOption(UpdateOptionRequest) returns (Option);
+  rpc DeleteOption(OptionID) returns (google.protobuf.Empty);
+
+  // ===== FULL STRUCTURE (Queue Job uchun) =====
+  rpc GetFullSectionStructure(GetFullSectionRequest) returns (GetFullSectionResponse);
+}
