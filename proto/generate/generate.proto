@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package testservice;
+
+option go_package = "github.com/khbdev/proto-online-test/proto/generate;generatepb";
+
+
+service TestService {
+    rpc GenerateTest(GenerateTestRequest) returns (GenerateTestResponse);
+    rpc GetTest(GetTestRequest) returns (GetTestResponse);
+}
+
+message GenerateTestRequest {
+    string name = 1;              
+	
+    repeated int32 section_ids = 2; 
+}
+
+message GenerateTestResponse {
+    string link = 1; 
+}
+
+
+message GetTestRequest {
+    string key = 1; 
+}
+
+message GetTestResponse {
+    string test_json = 1; 
+}
