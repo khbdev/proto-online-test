@@ -24,7 +24,7 @@ const (
 type GenerateTestRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	SectionIds    []uint64               `protobuf:"varint,2,rep,packed,name=section_ids,json=sectionIds,proto3" json:"section_ids,omitempty"`
+	SectionIds    []int32                `protobuf:"varint,2,rep,packed,name=section_ids,json=sectionIds,proto3" json:"section_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,7 +66,7 @@ func (x *GenerateTestRequest) GetName() string {
 	return ""
 }
 
-func (x *GenerateTestRequest) GetSectionIds() []uint64 {
+func (x *GenerateTestRequest) GetSectionIds() []int32 {
 	if x != nil {
 		return x.SectionIds
 	}
@@ -212,7 +212,7 @@ const file_proto_generate_generate_proto_rawDesc = "" +
 	"\x1dproto/generate/generate.proto\x12\vtestservice\"J\n" +
 	"\x13GenerateTestRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1f\n" +
-	"\vsection_ids\x18\x02 \x03(\x04R\n" +
+	"\vsection_ids\x18\x02 \x03(\x05R\n" +
 	"sectionIds\"*\n" +
 	"\x14GenerateTestResponse\x12\x12\n" +
 	"\x04link\x18\x01 \x01(\tR\x04link\"\"\n" +
