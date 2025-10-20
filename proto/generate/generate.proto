@@ -12,8 +12,8 @@ service TestService {
 
 message GenerateTestRequest {
     string name = 1;              
-	
-    repeated int32 section_ids = 2; 
+
+   repeated uint64 section_ids = 2;
 }
 
 message GenerateTestResponse {
