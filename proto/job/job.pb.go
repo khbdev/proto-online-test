@@ -308,7 +308,7 @@ const file_proto_job_job_proto_rawDesc = "" +
 	"\n" +
 	"JobService\x12=\n" +
 	"\n" +
-	"SubmitTest\x12\x16.job.SubmitTestRequest\x1a\x17.job.SubmitTestResponseB.Z,github.com/khbdev/grps-proto/proto/job;jobpbb\x06proto3"
+	"SubmitTest\x12\x16.job.SubmitTestRequest\x1a\x17.job.SubmitTestResponseB5Z3github.com/khbdev/proto-online-test/proto/job;jobpbb\x06proto3"
 
 var (
 	file_proto_job_job_proto_rawDescOnce sync.Once
