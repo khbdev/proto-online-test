@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package user;
+option go_package = "github.com/khbdev/proto-online-test/proto/filter;filterpb";
+
+
+message FilterRequest {
+  string first_name = 1;
+  string last_name = 2;
+  string phone = 3;
+  string email = 4;
+  string tg_username = 5;
+  string year = 6;
+  string date = 7; 
+}
+
+
+message Section {
+  int64 id = 1;
+  string name = 2;
+}
+
+message Question {
+  int64 id = 1;
+  string text = 2;
+}
+
+message Answer {
+  repeated int64 option_ids = 1;
+  int64 question_id = 2;
+}
+
+
+message User {
+  int64 id = 1;
+  string created_at = 2;
+  string updated_at = 3;
+  string deleted_at = 4;
+
+  string first_name = 5;
+  string last_name = 6;
+  string phone = 7;
+  string email = 8;
+  string tg_username = 9;
+
+  repeated Section bolimlar = 10;
+  repeated Question savollar = 11;
+  repeated Answer javoblar = 12;
+
+  int32 togri_javoblar = 13;
+  int32 natogri_javoblar = 14;
+  double score_percent = 15;
+  string description = 16;
+}
+
+
+message UserList {
+  repeated User users = 1;
+}
+
+
+service UserService {
+  rpc GetUsers(FilterRequest) returns (UserList);
+}
