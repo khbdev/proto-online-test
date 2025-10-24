@@ -26,10 +26,7 @@ type FilterRequest struct {
 	FirstName     string                 `protobuf:"bytes,1,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
 	LastName      string                 `protobuf:"bytes,2,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	Phone         string                 `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone,omitempty"`
-	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
-	TgUsername    string                 `protobuf:"bytes,5,opt,name=tg_username,json=tgUsername,proto3" json:"tg_username,omitempty"`
 	Year          string                 `protobuf:"bytes,6,opt,name=year,proto3" json:"year,omitempty"`
-	Date          string                 `protobuf:"bytes,7,opt,name=date,proto3" json:"date,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -85,30 +82,9 @@ func (x *FilterRequest) GetPhone() string {
 	return ""
 }
 
-func (x *FilterRequest) GetEmail() string {
-	if x != nil {
-		return x.Email
-	}
-	return ""
-}
-
-func (x *FilterRequest) GetTgUsername() string {
-	if x != nil {
-		return x.TgUsername
-	}
-	return ""
-}
-
 func (x *FilterRequest) GetYear() string {
 	if x != nil {
 		return x.Year
-	}
-	return ""
-}
-
-func (x *FilterRequest) GetDate() string {
-	if x != nil {
-		return x.Date
 	}
 	return ""
 }
@@ -481,17 +457,13 @@ var File_proto_filter_filter_proto protoreflect.FileDescriptor
 
 const file_proto_filter_filter_proto_rawDesc = "" +
 	"\n" +
-	"\x19proto/filter/filter.proto\x12\x04user\"\xc0\x01\n" +
+	"\x19proto/filter/filter.proto\x12\x04user\"u\n" +
 	"\rFilterRequest\x12\x1d\n" +
 	"\n" +
 	"first_name\x18\x01 \x01(\tR\tfirstName\x12\x1b\n" +
 	"\tlast_name\x18\x02 \x01(\tR\blastName\x12\x14\n" +
-	"\x05phone\x18\x03 \x01(\tR\x05phone\x12\x14\n" +
-	"\x05email\x18\x04 \x01(\tR\x05email\x12\x1f\n" +
-	"\vtg_username\x18\x05 \x01(\tR\n" +
-	"tgUsername\x12\x12\n" +
-	"\x04year\x18\x06 \x01(\tR\x04year\x12\x12\n" +
-	"\x04date\x18\a \x01(\tR\x04date\"-\n" +
+	"\x05phone\x18\x03 \x01(\tR\x05phone\x12\x12\n" +
+	"\x04year\x18\x06 \x01(\tR\x04year\"-\n" +
 	"\aSection\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\".\n" +
