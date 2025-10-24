@@ -457,7 +457,7 @@ var File_proto_filter_filter_proto protoreflect.FileDescriptor
 
 const file_proto_filter_filter_proto_rawDesc = "" +
 	"\n" +
-	"\x19proto/filter/filter.proto\x12\x04user\"u\n" +
+	"\x19proto/filter/filter.proto\x12\x06filter\"u\n" +
 	"\rFilterRequest\x12\x1d\n" +
 	"\n" +
 	"first_name\x18\x01 \x01(\tR\tfirstName\x12\x1b\n" +
@@ -474,7 +474,7 @@ const file_proto_filter_filter_proto_rawDesc = "" +
 	"\n" +
 	"option_ids\x18\x01 \x03(\x03R\toptionIds\x12\x1f\n" +
 	"\vquestion_id\x18\x02 \x01(\x03R\n" +
-	"questionId\"\x96\x04\n" +
+	"questionId\"\x9c\x04\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1d\n" +
 	"\n" +
@@ -489,20 +489,19 @@ const file_proto_filter_filter_proto_rawDesc = "" +
 	"\x05phone\x18\a \x01(\tR\x05phone\x12\x14\n" +
 	"\x05email\x18\b \x01(\tR\x05email\x12\x1f\n" +
 	"\vtg_username\x18\t \x01(\tR\n" +
-	"tgUsername\x12)\n" +
+	"tgUsername\x12+\n" +
 	"\bbolimlar\x18\n" +
-	" \x03(\v2\r.user.SectionR\bbolimlar\x12*\n" +
-	"\bsavollar\x18\v \x03(\v2\x0e.user.QuestionR\bsavollar\x12(\n" +
-	"\bjavoblar\x18\f \x03(\v2\f.user.AnswerR\bjavoblar\x12%\n" +
+	" \x03(\v2\x0f.filter.SectionR\bbolimlar\x12,\n" +
+	"\bsavollar\x18\v \x03(\v2\x10.filter.QuestionR\bsavollar\x12*\n" +
+	"\bjavoblar\x18\f \x03(\v2\x0e.filter.AnswerR\bjavoblar\x12%\n" +
 	"\x0etogri_javoblar\x18\r \x01(\x05R\rtogriJavoblar\x12)\n" +
 	"\x10natogri_javoblar\x18\x0e \x01(\x05R\x0fnatogriJavoblar\x12#\n" +
 	"\rscore_percent\x18\x0f \x01(\x01R\fscorePercent\x12 \n" +
-	"\vdescription\x18\x10 \x01(\tR\vdescription\",\n" +
-	"\bUserList\x12 \n" +
-	"\x05users\x18\x01 \x03(\v2\n" +
-	".user.UserR\x05users2>\n" +
-	"\vUserService\x12/\n" +
-	"\bGetUsers\x12\x13.user.FilterRequest\x1a\x0e.user.UserListB;Z9github.com/khbdev/proto-online-test/proto/filter;filterpbb\x06proto3"
+	"\vdescription\x18\x10 \x01(\tR\vdescription\".\n" +
+	"\bUserList\x12\"\n" +
+	"\x05users\x18\x01 \x03(\v2\f.filter.UserR\x05users2B\n" +
+	"\vUserService\x123\n" +
+	"\bGetUsers\x12\x15.filter.FilterRequest\x1a\x10.filter.UserListB;Z9github.com/khbdev/proto-online-test/proto/filter;filterpbb\x06proto3"
 
 var (
 	file_proto_filter_filter_proto_rawDescOnce sync.Once
@@ -518,20 +517,20 @@ func file_proto_filter_filter_proto_rawDescGZIP() []byte {
 
 var file_proto_filter_filter_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_filter_filter_proto_goTypes = []any{
-	(*FilterRequest)(nil), // 0: user.FilterRequest
-	(*Section)(nil),       // 1: user.Section
-	(*Question)(nil),      // 2: user.Question
-	(*Answer)(nil),        // 3: user.Answer
-	(*User)(nil),          // 4: user.User
-	(*UserList)(nil),      // 5: user.UserList
+	(*FilterRequest)(nil), // 0: filter.FilterRequest
+	(*Section)(nil),       // 1: filter.Section
+	(*Question)(nil),      // 2: filter.Question
+	(*Answer)(nil),        // 3: filter.Answer
+	(*User)(nil),          // 4: filter.User
+	(*UserList)(nil),      // 5: filter.UserList
 }
 var file_proto_filter_filter_proto_depIdxs = []int32{
-	1, // 0: user.User.bolimlar:type_name -> user.Section
-	2, // 1: user.User.savollar:type_name -> user.Question
-	3, // 2: user.User.javoblar:type_name -> user.Answer
-	4, // 3: user.UserList.users:type_name -> user.User
-	0, // 4: user.UserService.GetUsers:input_type -> user.FilterRequest
-	5, // 5: user.UserService.GetUsers:output_type -> user.UserList
+	1, // 0: filter.User.bolimlar:type_name -> filter.Section
+	2, // 1: filter.User.savollar:type_name -> filter.Question
+	3, // 2: filter.User.javoblar:type_name -> filter.Answer
+	4, // 3: filter.UserList.users:type_name -> filter.User
+	0, // 4: filter.UserService.GetUsers:input_type -> filter.FilterRequest
+	5, // 5: filter.UserService.GetUsers:output_type -> filter.UserList
 	5, // [5:6] is the sub-list for method output_type
 	4, // [4:5] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
