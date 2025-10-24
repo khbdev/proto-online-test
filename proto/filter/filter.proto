@@ -3,14 +3,12 @@ syntax = "proto3";
 package filter;
 option go_package = "github.com/khbdev/proto-online-test/proto/filter;filterpb";
 
-
 message FilterRequest {
   string first_name = 1;
   string last_name = 2;
   string phone = 3;
   string year = 6;
 }
-
 
 message Section {
   int64 id = 1;
@@ -27,8 +25,7 @@ message Answer {
   int64 question_id = 2;
 }
 
-
-message User {
+message FilterUser {   // <-- User nomini FilterUser ga o‘zgartirdik
   int64 id = 1;
   string created_at = 2;
   string updated_at = 3;
@@ -50,11 +47,9 @@ message User {
   string description = 16;
 }
 
-
 message UserList {
-  repeated User users = 1;
+  repeated FilterUser users = 1;  // <-- User -> FilterUser
 }
-
 
 service UserService {
   rpc GetUsers(FilterRequest) returns (UserList);

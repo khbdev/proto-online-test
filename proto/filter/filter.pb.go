@@ -245,7 +245,7 @@ func (x *Answer) GetQuestionId() int64 {
 	return 0
 }
 
-type User struct {
+type FilterUser struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	CreatedAt       string                 `protobuf:"bytes,2,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -267,20 +267,20 @@ type User struct {
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *User) Reset() {
-	*x = User{}
+func (x *FilterUser) Reset() {
+	*x = FilterUser{}
 	mi := &file_proto_filter_filter_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *User) String() string {
+func (x *FilterUser) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*User) ProtoMessage() {}
+func (*FilterUser) ProtoMessage() {}
 
-func (x *User) ProtoReflect() protoreflect.Message {
+func (x *FilterUser) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_filter_filter_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -292,117 +292,117 @@ func (x *User) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use User.ProtoReflect.Descriptor instead.
-func (*User) Descriptor() ([]byte, []int) {
+// Deprecated: Use FilterUser.ProtoReflect.Descriptor instead.
+func (*FilterUser) Descriptor() ([]byte, []int) {
 	return file_proto_filter_filter_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *User) GetId() int64 {
+func (x *FilterUser) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *User) GetCreatedAt() string {
+func (x *FilterUser) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return ""
 }
 
-func (x *User) GetUpdatedAt() string {
+func (x *FilterUser) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return ""
 }
 
-func (x *User) GetDeletedAt() string {
+func (x *FilterUser) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
 	return ""
 }
 
-func (x *User) GetFirstName() string {
+func (x *FilterUser) GetFirstName() string {
 	if x != nil {
 		return x.FirstName
 	}
 	return ""
 }
 
-func (x *User) GetLastName() string {
+func (x *FilterUser) GetLastName() string {
 	if x != nil {
 		return x.LastName
 	}
 	return ""
 }
 
-func (x *User) GetPhone() string {
+func (x *FilterUser) GetPhone() string {
 	if x != nil {
 		return x.Phone
 	}
 	return ""
 }
 
-func (x *User) GetEmail() string {
+func (x *FilterUser) GetEmail() string {
 	if x != nil {
 		return x.Email
 	}
 	return ""
 }
 
-func (x *User) GetTgUsername() string {
+func (x *FilterUser) GetTgUsername() string {
 	if x != nil {
 		return x.TgUsername
 	}
 	return ""
 }
 
-func (x *User) GetBolimlar() []*Section {
+func (x *FilterUser) GetBolimlar() []*Section {
 	if x != nil {
 		return x.Bolimlar
 	}
 	return nil
 }
 
-func (x *User) GetSavollar() []*Question {
+func (x *FilterUser) GetSavollar() []*Question {
 	if x != nil {
 		return x.Savollar
 	}
 	return nil
 }
 
-func (x *User) GetJavoblar() []*Answer {
+func (x *FilterUser) GetJavoblar() []*Answer {
 	if x != nil {
 		return x.Javoblar
 	}
 	return nil
 }
 
-func (x *User) GetTogriJavoblar() int32 {
+func (x *FilterUser) GetTogriJavoblar() int32 {
 	if x != nil {
 		return x.TogriJavoblar
 	}
 	return 0
 }
 
-func (x *User) GetNatogriJavoblar() int32 {
+func (x *FilterUser) GetNatogriJavoblar() int32 {
 	if x != nil {
 		return x.NatogriJavoblar
 	}
 	return 0
 }
 
-func (x *User) GetScorePercent() float64 {
+func (x *FilterUser) GetScorePercent() float64 {
 	if x != nil {
 		return x.ScorePercent
 	}
 	return 0
 }
 
-func (x *User) GetDescription() string {
+func (x *FilterUser) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
@@ -411,7 +411,7 @@ func (x *User) GetDescription() string {
 
 type UserList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Users         []*User                `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
+	Users         []*FilterUser          `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"` // <-- User -> FilterUser
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -446,7 +446,7 @@ func (*UserList) Descriptor() ([]byte, []int) {
 	return file_proto_filter_filter_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *UserList) GetUsers() []*User {
+func (x *UserList) GetUsers() []*FilterUser {
 	if x != nil {
 		return x.Users
 	}
@@ -474,8 +474,9 @@ const file_proto_filter_filter_proto_rawDesc = "" +
 	"\n" +
 	"option_ids\x18\x01 \x03(\x03R\toptionIds\x12\x1f\n" +
 	"\vquestion_id\x18\x02 \x01(\x03R\n" +
-	"questionId\"\x9c\x04\n" +
-	"\x04User\x12\x0e\n" +
+	"questionId\"\xa2\x04\n" +
+	"\n" +
+	"FilterUser\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1d\n" +
 	"\n" +
 	"created_at\x18\x02 \x01(\tR\tcreatedAt\x12\x1d\n" +
@@ -497,9 +498,9 @@ const file_proto_filter_filter_proto_rawDesc = "" +
 	"\x0etogri_javoblar\x18\r \x01(\x05R\rtogriJavoblar\x12)\n" +
 	"\x10natogri_javoblar\x18\x0e \x01(\x05R\x0fnatogriJavoblar\x12#\n" +
 	"\rscore_percent\x18\x0f \x01(\x01R\fscorePercent\x12 \n" +
-	"\vdescription\x18\x10 \x01(\tR\vdescription\".\n" +
-	"\bUserList\x12\"\n" +
-	"\x05users\x18\x01 \x03(\v2\f.filter.UserR\x05users2B\n" +
+	"\vdescription\x18\x10 \x01(\tR\vdescription\"4\n" +
+	"\bUserList\x12(\n" +
+	"\x05users\x18\x01 \x03(\v2\x12.filter.FilterUserR\x05users2B\n" +
 	"\vUserService\x123\n" +
 	"\bGetUsers\x12\x15.filter.FilterRequest\x1a\x10.filter.UserListB;Z9github.com/khbdev/proto-online-test/proto/filter;filterpbb\x06proto3"
 
@@ -521,14 +522,14 @@ var file_proto_filter_filter_proto_goTypes = []any{
 	(*Section)(nil),       // 1: filter.Section
 	(*Question)(nil),      // 2: filter.Question
 	(*Answer)(nil),        // 3: filter.Answer
-	(*User)(nil),          // 4: filter.User
+	(*FilterUser)(nil),    // 4: filter.FilterUser
 	(*UserList)(nil),      // 5: filter.UserList
 }
 var file_proto_filter_filter_proto_depIdxs = []int32{
-	1, // 0: filter.User.bolimlar:type_name -> filter.Section
-	2, // 1: filter.User.savollar:type_name -> filter.Question
-	3, // 2: filter.User.javoblar:type_name -> filter.Answer
-	4, // 3: filter.UserList.users:type_name -> filter.User
+	1, // 0: filter.FilterUser.bolimlar:type_name -> filter.Section
+	2, // 1: filter.FilterUser.savollar:type_name -> filter.Question
+	3, // 2: filter.FilterUser.javoblar:type_name -> filter.Answer
+	4, // 3: filter.UserList.users:type_name -> filter.FilterUser
 	0, // 4: filter.UserService.GetUsers:input_type -> filter.FilterRequest
 	5, // 5: filter.UserService.GetUsers:output_type -> filter.UserList
 	5, // [5:6] is the sub-list for method output_type
