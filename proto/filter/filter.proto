@@ -8,10 +8,7 @@ message FilterRequest {
   string first_name = 1;
   string last_name = 2;
   string phone = 3;
-  string email = 4;
-  string tg_username = 5;
   string year = 6;
-  string date = 7; 
 }
 
 
