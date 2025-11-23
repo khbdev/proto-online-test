@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package exam;
+
+option go_package = "github.com/khbdev/proto-online-test/proto/exam;exampb";
+
+message Content {
+  uint64 id = 1;
+  string title = 2;
+  string description = 3;
+  repeated uint64 section_ids = 4; 
+}
+
+message CreateContentRequest {
+  string title = 1;
+  string description = 2;
+  repeated uint64 section_ids = 3;
+}
+
+message CreateContentResponse {
+  Content content = 1;
+}
+
+message GetContentListRequest {}
+
+message GetContentListResponse {
+  repeated Content contents = 1;
+}
+
+message GetContentByIDRequest {
+  uint64 id = 1;
+}
+
+message GetContentByIDResponse {
+  Content content = 1;
+}
+
+message UpdateContentRequest {
+  uint64 id = 1;
+  string title = 2;
+  string description = 3;
+  repeated uint64 section_ids = 4;
+}
+
+message UpdateContentResponse {
+  Content content = 1;
+}
+
+message DeleteContentRequest {
+  uint64 id = 1;
+}
+
+message DeleteContentResponse {
+  bool success = 1;
+}
+
+service ContentService {
+  rpc CreateContent(CreateContentRequest) returns (CreateContentResponse);
+  rpc GetContentList(GetContentListRequest) returns (GetContentListResponse);
+  rpc GetContentByID(GetContentByIDRequest) returns (GetContentByIDResponse);
+  rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse);
+  rpc DeleteContent(DeleteContentRequest) returns (DeleteContentResponse);
+}
