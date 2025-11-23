@@ -29,6 +29,8 @@ const (
 // ExamServiceClient is the client API for ExamService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// ExamService gRPC service
 type ExamServiceClient interface {
 	CreateExam(ctx context.Context, in *CreateExamRequest, opts ...grpc.CallOption) (*CreateExamResponse, error)
 	GetExamList(ctx context.Context, in *GetExamListRequest, opts ...grpc.CallOption) (*GetExamListResponse, error)
@@ -98,6 +100,8 @@ func (c *examServiceClient) DeleteExam(ctx context.Context, in *DeleteExamReques
 // ExamServiceServer is the server API for ExamService service.
 // All implementations must embed UnimplementedExamServiceServer
 // for forward compatibility.
+//
+// ExamService gRPC service
 type ExamServiceServer interface {
 	CreateExam(context.Context, *CreateExamRequest) (*CreateExamResponse, error)
 	GetExamList(context.Context, *GetExamListRequest) (*GetExamListResponse, error)

@@ -4,13 +4,15 @@ package exam;
 
 option go_package = "github.com/khbdev/proto-online-test/proto/exam;exampb";
 
+// Exam message
 message Exam {
   uint64 id = 1;
   string title = 2;
   string description = 3;
-  repeated uint64 section_ids = 4; 
+  repeated uint64 section_ids = 4;
 }
 
+// Create Exam
 message CreateExamRequest {
   string title = 1;
   string description = 2;
@@ -21,12 +23,14 @@ message CreateExamResponse {
   Exam exam = 1;
 }
 
+// Get Exam List
 message GetExamListRequest {}
 
 message GetExamListResponse {
   repeated Exam exams = 1;
 }
 
+// Get Exam by ID
 message GetExamByIDRequest {
   uint64 id = 1;
 }
@@ -35,6 +39,7 @@ message GetExamByIDResponse {
   Exam exam = 1;
 }
 
+// Update Exam
 message UpdateExamRequest {
   uint64 id = 1;
   string title = 2;
@@ -46,6 +51,7 @@ message UpdateExamResponse {
   Exam exam = 1;
 }
 
+// Delete Exam
 message DeleteExamRequest {
   uint64 id = 1;
 }
@@ -54,6 +60,7 @@ message DeleteExamResponse {
   bool success = 1;
 }
 
+// ExamService gRPC service
 service ExamService {
   rpc CreateExam(CreateExamRequest) returns (CreateExamResponse);
   rpc GetExamList(GetExamListRequest) returns (GetExamListResponse);

@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Exam message
 type Exam struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -89,6 +90,7 @@ func (x *Exam) GetSectionIds() []uint64 {
 	return nil
 }
 
+// Create Exam
 type CreateExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
@@ -193,6 +195,7 @@ func (x *CreateExamResponse) GetExam() *Exam {
 	return nil
 }
 
+// Get Exam List
 type GetExamListRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -273,6 +276,7 @@ func (x *GetExamListResponse) GetExams() []*Exam {
 	return nil
 }
 
+// Get Exam by ID
 type GetExamByIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -361,6 +365,7 @@ func (x *GetExamByIDResponse) GetExam() *Exam {
 	return nil
 }
 
+// Update Exam
 type UpdateExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -473,6 +478,7 @@ func (x *UpdateExamResponse) GetExam() *Exam {
 	return nil
 }
 
+// Delete Exam
 type DeleteExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
