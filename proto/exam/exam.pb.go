@@ -24,7 +24,7 @@ const (
 // Exam message
 type Exam struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` // DB-generated ID, response’da bo‘ladi
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	SectionIds    []uint64               `protobuf:"varint,4,rep,packed,name=section_ids,json=sectionIds,proto3" json:"section_ids,omitempty"`
@@ -279,7 +279,7 @@ func (x *GetExamListResponse) GetExams() []*Exam {
 // Get Exam by ID
 type GetExamByIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` // ID orqali olish
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -368,7 +368,7 @@ func (x *GetExamByIDResponse) GetExam() *Exam {
 // Update Exam
 type UpdateExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` // DB ID bo‘yicha update qilish
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	SectionIds    []uint64               `protobuf:"varint,4,rep,packed,name=section_ids,json=sectionIds,proto3" json:"section_ids,omitempty"`
@@ -481,7 +481,7 @@ func (x *UpdateExamResponse) GetExam() *Exam {
 // Delete Exam
 type DeleteExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` // DB ID bo‘yicha o‘chirish
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

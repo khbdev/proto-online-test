@@ -6,7 +6,7 @@ option go_package = "github.com/khbdev/proto-online-test/proto/exam;exampb";
 
 // Exam message
 message Exam {
-  uint64 id = 1;
+  uint64 id = 1; // DB-generated ID, response’da bo‘ladi
   string title = 2;
   string description = 3;
   repeated uint64 section_ids = 4;
@@ -32,7 +32,7 @@ message GetExamListResponse {
 
 // Get Exam by ID
 message GetExamByIDRequest {
-  uint64 id = 1;
+  uint64 id = 1; // ID orqali olish
 }
 
 message GetExamByIDResponse {
@@ -41,7 +41,7 @@ message GetExamByIDResponse {
 
 // Update Exam
 message UpdateExamRequest {
-  uint64 id = 1;
+  uint64 id = 1; // DB ID bo‘yicha update qilish
   string title = 2;
   string description = 3;
   repeated uint64 section_ids = 4;
@@ -53,7 +53,7 @@ message UpdateExamResponse {
 
 // Delete Exam
 message DeleteExamRequest {
-  uint64 id = 1;
+  uint64 id = 1; // DB ID bo‘yicha o‘chirish
 }
 
 message DeleteExamResponse {
