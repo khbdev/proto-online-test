@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Content struct {
+type Exam struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
@@ -31,20 +31,20 @@ type Content struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Content) Reset() {
-	*x = Content{}
+func (x *Exam) Reset() {
+	*x = Exam{}
 	mi := &file_proto_exam_exam_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Content) String() string {
+func (x *Exam) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Content) ProtoMessage() {}
+func (*Exam) ProtoMessage() {}
 
-func (x *Content) ProtoReflect() protoreflect.Message {
+func (x *Exam) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,40 +56,40 @@ func (x *Content) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Content.ProtoReflect.Descriptor instead.
-func (*Content) Descriptor() ([]byte, []int) {
+// Deprecated: Use Exam.ProtoReflect.Descriptor instead.
+func (*Exam) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Content) GetId() uint64 {
+func (x *Exam) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *Content) GetTitle() string {
+func (x *Exam) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *Content) GetDescription() string {
+func (x *Exam) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *Content) GetSectionIds() []uint64 {
+func (x *Exam) GetSectionIds() []uint64 {
 	if x != nil {
 		return x.SectionIds
 	}
 	return nil
 }
 
-type CreateContentRequest struct {
+type CreateExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
@@ -98,20 +98,20 @@ type CreateContentRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateContentRequest) Reset() {
-	*x = CreateContentRequest{}
+func (x *CreateExamRequest) Reset() {
+	*x = CreateExamRequest{}
 	mi := &file_proto_exam_exam_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateContentRequest) String() string {
+func (x *CreateExamRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateContentRequest) ProtoMessage() {}
+func (*CreateExamRequest) ProtoMessage() {}
 
-func (x *CreateContentRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateExamRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -123,53 +123,53 @@ func (x *CreateContentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateContentRequest.ProtoReflect.Descriptor instead.
-func (*CreateContentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateExamRequest.ProtoReflect.Descriptor instead.
+func (*CreateExamRequest) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateContentRequest) GetTitle() string {
+func (x *CreateExamRequest) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *CreateContentRequest) GetDescription() string {
+func (x *CreateExamRequest) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *CreateContentRequest) GetSectionIds() []uint64 {
+func (x *CreateExamRequest) GetSectionIds() []uint64 {
 	if x != nil {
 		return x.SectionIds
 	}
 	return nil
 }
 
-type CreateContentResponse struct {
+type CreateExamResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Content       *Content               `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
+	Exam          *Exam                  `protobuf:"bytes,1,opt,name=exam,proto3" json:"exam,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateContentResponse) Reset() {
-	*x = CreateContentResponse{}
+func (x *CreateExamResponse) Reset() {
+	*x = CreateExamResponse{}
 	mi := &file_proto_exam_exam_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateContentResponse) String() string {
+func (x *CreateExamResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateContentResponse) ProtoMessage() {}
+func (*CreateExamResponse) ProtoMessage() {}
 
-func (x *CreateContentResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateExamResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -181,38 +181,38 @@ func (x *CreateContentResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateContentResponse.ProtoReflect.Descriptor instead.
-func (*CreateContentResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateExamResponse.ProtoReflect.Descriptor instead.
+func (*CreateExamResponse) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreateContentResponse) GetContent() *Content {
+func (x *CreateExamResponse) GetExam() *Exam {
 	if x != nil {
-		return x.Content
+		return x.Exam
 	}
 	return nil
 }
 
-type GetContentListRequest struct {
+type GetExamListRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetContentListRequest) Reset() {
-	*x = GetContentListRequest{}
+func (x *GetExamListRequest) Reset() {
+	*x = GetExamListRequest{}
 	mi := &file_proto_exam_exam_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetContentListRequest) String() string {
+func (x *GetExamListRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetContentListRequest) ProtoMessage() {}
+func (*GetExamListRequest) ProtoMessage() {}
 
-func (x *GetContentListRequest) ProtoReflect() protoreflect.Message {
+func (x *GetExamListRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -224,32 +224,32 @@ func (x *GetContentListRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetContentListRequest.ProtoReflect.Descriptor instead.
-func (*GetContentListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetExamListRequest.ProtoReflect.Descriptor instead.
+func (*GetExamListRequest) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{3}
 }
 
-type GetContentListResponse struct {
+type GetExamListResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Contents      []*Content             `protobuf:"bytes,1,rep,name=contents,proto3" json:"contents,omitempty"`
+	Exams         []*Exam                `protobuf:"bytes,1,rep,name=exams,proto3" json:"exams,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetContentListResponse) Reset() {
-	*x = GetContentListResponse{}
+func (x *GetExamListResponse) Reset() {
+	*x = GetExamListResponse{}
 	mi := &file_proto_exam_exam_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetContentListResponse) String() string {
+func (x *GetExamListResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetContentListResponse) ProtoMessage() {}
+func (*GetExamListResponse) ProtoMessage() {}
 
-func (x *GetContentListResponse) ProtoReflect() protoreflect.Message {
+func (x *GetExamListResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -261,39 +261,39 @@ func (x *GetContentListResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetContentListResponse.ProtoReflect.Descriptor instead.
-func (*GetContentListResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetExamListResponse.ProtoReflect.Descriptor instead.
+func (*GetExamListResponse) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *GetContentListResponse) GetContents() []*Content {
+func (x *GetExamListResponse) GetExams() []*Exam {
 	if x != nil {
-		return x.Contents
+		return x.Exams
 	}
 	return nil
 }
 
-type GetContentByIDRequest struct {
+type GetExamByIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetContentByIDRequest) Reset() {
-	*x = GetContentByIDRequest{}
+func (x *GetExamByIDRequest) Reset() {
+	*x = GetExamByIDRequest{}
 	mi := &file_proto_exam_exam_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetContentByIDRequest) String() string {
+func (x *GetExamByIDRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetContentByIDRequest) ProtoMessage() {}
+func (*GetExamByIDRequest) ProtoMessage() {}
 
-func (x *GetContentByIDRequest) ProtoReflect() protoreflect.Message {
+func (x *GetExamByIDRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -305,39 +305,39 @@ func (x *GetContentByIDRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetContentByIDRequest.ProtoReflect.Descriptor instead.
-func (*GetContentByIDRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetExamByIDRequest.ProtoReflect.Descriptor instead.
+func (*GetExamByIDRequest) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetContentByIDRequest) GetId() uint64 {
+func (x *GetExamByIDRequest) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetContentByIDResponse struct {
+type GetExamByIDResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Content       *Content               `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
+	Exam          *Exam                  `protobuf:"bytes,1,opt,name=exam,proto3" json:"exam,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetContentByIDResponse) Reset() {
-	*x = GetContentByIDResponse{}
+func (x *GetExamByIDResponse) Reset() {
+	*x = GetExamByIDResponse{}
 	mi := &file_proto_exam_exam_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetContentByIDResponse) String() string {
+func (x *GetExamByIDResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetContentByIDResponse) ProtoMessage() {}
+func (*GetExamByIDResponse) ProtoMessage() {}
 
-func (x *GetContentByIDResponse) ProtoReflect() protoreflect.Message {
+func (x *GetExamByIDResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -349,19 +349,19 @@ func (x *GetContentByIDResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetContentByIDResponse.ProtoReflect.Descriptor instead.
-func (*GetContentByIDResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetExamByIDResponse.ProtoReflect.Descriptor instead.
+func (*GetExamByIDResponse) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetContentByIDResponse) GetContent() *Content {
+func (x *GetExamByIDResponse) GetExam() *Exam {
 	if x != nil {
-		return x.Content
+		return x.Exam
 	}
 	return nil
 }
 
-type UpdateContentRequest struct {
+type UpdateExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
@@ -371,20 +371,20 @@ type UpdateContentRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateContentRequest) Reset() {
-	*x = UpdateContentRequest{}
+func (x *UpdateExamRequest) Reset() {
+	*x = UpdateExamRequest{}
 	mi := &file_proto_exam_exam_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateContentRequest) String() string {
+func (x *UpdateExamRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateContentRequest) ProtoMessage() {}
+func (*UpdateExamRequest) ProtoMessage() {}
 
-func (x *UpdateContentRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateExamRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -396,60 +396,60 @@ func (x *UpdateContentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateContentRequest.ProtoReflect.Descriptor instead.
-func (*UpdateContentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateExamRequest.ProtoReflect.Descriptor instead.
+func (*UpdateExamRequest) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *UpdateContentRequest) GetId() uint64 {
+func (x *UpdateExamRequest) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *UpdateContentRequest) GetTitle() string {
+func (x *UpdateExamRequest) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *UpdateContentRequest) GetDescription() string {
+func (x *UpdateExamRequest) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *UpdateContentRequest) GetSectionIds() []uint64 {
+func (x *UpdateExamRequest) GetSectionIds() []uint64 {
 	if x != nil {
 		return x.SectionIds
 	}
 	return nil
 }
 
-type UpdateContentResponse struct {
+type UpdateExamResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Content       *Content               `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
+	Exam          *Exam                  `protobuf:"bytes,1,opt,name=exam,proto3" json:"exam,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateContentResponse) Reset() {
-	*x = UpdateContentResponse{}
+func (x *UpdateExamResponse) Reset() {
+	*x = UpdateExamResponse{}
 	mi := &file_proto_exam_exam_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateContentResponse) String() string {
+func (x *UpdateExamResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateContentResponse) ProtoMessage() {}
+func (*UpdateExamResponse) ProtoMessage() {}
 
-func (x *UpdateContentResponse) ProtoReflect() protoreflect.Message {
+func (x *UpdateExamResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -461,39 +461,39 @@ func (x *UpdateContentResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateContentResponse.ProtoReflect.Descriptor instead.
-func (*UpdateContentResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateExamResponse.ProtoReflect.Descriptor instead.
+func (*UpdateExamResponse) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *UpdateContentResponse) GetContent() *Content {
+func (x *UpdateExamResponse) GetExam() *Exam {
 	if x != nil {
-		return x.Content
+		return x.Exam
 	}
 	return nil
 }
 
-type DeleteContentRequest struct {
+type DeleteExamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteContentRequest) Reset() {
-	*x = DeleteContentRequest{}
+func (x *DeleteExamRequest) Reset() {
+	*x = DeleteExamRequest{}
 	mi := &file_proto_exam_exam_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteContentRequest) String() string {
+func (x *DeleteExamRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteContentRequest) ProtoMessage() {}
+func (*DeleteExamRequest) ProtoMessage() {}
 
-func (x *DeleteContentRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteExamRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -505,39 +505,39 @@ func (x *DeleteContentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteContentRequest.ProtoReflect.Descriptor instead.
-func (*DeleteContentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteExamRequest.ProtoReflect.Descriptor instead.
+func (*DeleteExamRequest) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *DeleteContentRequest) GetId() uint64 {
+func (x *DeleteExamRequest) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type DeleteContentResponse struct {
+type DeleteExamResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteContentResponse) Reset() {
-	*x = DeleteContentResponse{}
+func (x *DeleteExamResponse) Reset() {
+	*x = DeleteExamResponse{}
 	mi := &file_proto_exam_exam_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteContentResponse) String() string {
+func (x *DeleteExamResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteContentResponse) ProtoMessage() {}
+func (*DeleteExamResponse) ProtoMessage() {}
 
-func (x *DeleteContentResponse) ProtoReflect() protoreflect.Message {
+func (x *DeleteExamResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_exam_exam_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -549,12 +549,12 @@ func (x *DeleteContentResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteContentResponse.ProtoReflect.Descriptor instead.
-func (*DeleteContentResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteExamResponse.ProtoReflect.Descriptor instead.
+func (*DeleteExamResponse) Descriptor() ([]byte, []int) {
 	return file_proto_exam_exam_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *DeleteContentResponse) GetSuccess() bool {
+func (x *DeleteExamResponse) GetSuccess() bool {
 	if x != nil {
 		return x.Success
 	}
@@ -565,45 +565,52 @@ var File_proto_exam_exam_proto protoreflect.FileDescriptor
 
 const file_proto_exam_exam_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/exam/exam.proto\x12\x04exam\"r\n" +
-	"\aContent\x12\x0e\n" +
+	"\x15proto/exam/exam.proto\x12\x04exam\"o\n" +
+	"\x04Exam\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vsection_ids\x18\x04 \x03(\x04R\n" +
-	"sectionIds\"o\n" +
-	"\x14CreateContentRequest\x12\x14\n" +
+	"sectionIds\"l\n" +
+	"\x11CreateExamRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vsection_ids\x18\x03 \x03(\x04R\n" +
-	"sectionIds\"@\n" +
-	"\x15CreateContentResponse\x12'\n" +
-	"\acontent\x18\x01 \x01(\v2\r.exam.ContentR\acontent\"\x17\n" +
-	"\x15GetContentListRequest\"C\n" +
-	"\x16GetContentListResponse\x12)\n" +
-	"\bcontents\x18\x01 \x03(\v2\r.exam.ContentR\bcontents\"'\n" +
-	"\x15GetContentByIDRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x04R\x02id\"A\n" +
-	"\x16GetContentByIDResponse\x12'\n" +
-	"\acontent\x18\x01 \x01(\v2\r.exam.ContentR\acontent\"\x7f\n" +
-	"\x14UpdateContentRequest\x12\x0e\n" +
+	"sectionIds\"4\n" +
+	"\x12CreateExamResponse\x12\x1e\n" +
+	"\x04exam\x18\x01 \x01(\v2\n" +
+	".exam.ExamR\x04exam\"\x14\n" +
+	"\x12GetExamListRequest\"7\n" +
+	"\x13GetExamListResponse\x12 \n" +
+	"\x05exams\x18\x01 \x03(\v2\n" +
+	".exam.ExamR\x05exams\"$\n" +
+	"\x12GetExamByIDRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x04R\x02id\"5\n" +
+	"\x13GetExamByIDResponse\x12\x1e\n" +
+	"\x04exam\x18\x01 \x01(\v2\n" +
+	".exam.ExamR\x04exam\"|\n" +
+	"\x11UpdateExamRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x1f\n" +
 	"\vsection_ids\x18\x04 \x03(\x04R\n" +
-	"sectionIds\"@\n" +
-	"\x15UpdateContentResponse\x12'\n" +
-	"\acontent\x18\x01 \x01(\v2\r.exam.ContentR\acontent\"&\n" +
-	"\x14DeleteContentRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x04R\x02id\"1\n" +
-	"\x15DeleteContentResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2\x88\x03\n" +
-	"\x0eContentService\x12H\n" +
-	"\rCreateContent\x12\x1a.exam.CreateContentRequest\x1a\x1b.exam.CreateContentResponse\x12K\n" +
-	"\x0eGetContentList\x12\x1b.exam.GetContentListRequest\x1a\x1c.exam.GetContentListResponse\x12K\n" +
-	"\x0eGetContentByID\x12\x1b.exam.GetContentByIDRequest\x1a\x1c.exam.GetContentByIDResponse\x12H\n" +
-	"\rUpdateContent\x12\x1a.exam.UpdateContentRequest\x1a\x1b.exam.UpdateContentResponse\x12H\n" +
-	"\rDeleteContent\x12\x1a.exam.DeleteContentRequest\x1a\x1b.exam.DeleteContentResponseB7Z5github.com/khbdev/proto-online-test/proto/exam;exampbb\x06proto3"
+	"sectionIds\"4\n" +
+	"\x12UpdateExamResponse\x12\x1e\n" +
+	"\x04exam\x18\x01 \x01(\v2\n" +
+	".exam.ExamR\x04exam\"#\n" +
+	"\x11DeleteExamRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x04R\x02id\".\n" +
+	"\x12DeleteExamResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\xd8\x02\n" +
+	"\vExamService\x12?\n" +
+	"\n" +
+	"CreateExam\x12\x17.exam.CreateExamRequest\x1a\x18.exam.CreateExamResponse\x12B\n" +
+	"\vGetExamList\x12\x18.exam.GetExamListRequest\x1a\x19.exam.GetExamListResponse\x12B\n" +
+	"\vGetExamByID\x12\x18.exam.GetExamByIDRequest\x1a\x19.exam.GetExamByIDResponse\x12?\n" +
+	"\n" +
+	"UpdateExam\x12\x17.exam.UpdateExamRequest\x1a\x18.exam.UpdateExamResponse\x12?\n" +
+	"\n" +
+	"DeleteExam\x12\x17.exam.DeleteExamRequest\x1a\x18.exam.DeleteExamResponseB7Z5github.com/khbdev/proto-online-test/proto/exam;exampbb\x06proto3"
 
 var (
 	file_proto_exam_exam_proto_rawDescOnce sync.Once
@@ -619,33 +626,33 @@ func file_proto_exam_exam_proto_rawDescGZIP() []byte {
 
 var file_proto_exam_exam_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_proto_exam_exam_proto_goTypes = []any{
-	(*Content)(nil),                // 0: exam.Content
-	(*CreateContentRequest)(nil),   // 1: exam.CreateContentRequest
-	(*CreateContentResponse)(nil),  // 2: exam.CreateContentResponse
-	(*GetContentListRequest)(nil),  // 3: exam.GetContentListRequest
-	(*GetContentListResponse)(nil), // 4: exam.GetContentListResponse
-	(*GetContentByIDRequest)(nil),  // 5: exam.GetContentByIDRequest
-	(*GetContentByIDResponse)(nil), // 6: exam.GetContentByIDResponse
-	(*UpdateContentRequest)(nil),   // 7: exam.UpdateContentRequest
-	(*UpdateContentResponse)(nil),  // 8: exam.UpdateContentResponse
-	(*DeleteContentRequest)(nil),   // 9: exam.DeleteContentRequest
-	(*DeleteContentResponse)(nil),  // 10: exam.DeleteContentResponse
+	(*Exam)(nil),                // 0: exam.Exam
+	(*CreateExamRequest)(nil),   // 1: exam.CreateExamRequest
+	(*CreateExamResponse)(nil),  // 2: exam.CreateExamResponse
+	(*GetExamListRequest)(nil),  // 3: exam.GetExamListRequest
+	(*GetExamListResponse)(nil), // 4: exam.GetExamListResponse
+	(*GetExamByIDRequest)(nil),  // 5: exam.GetExamByIDRequest
+	(*GetExamByIDResponse)(nil), // 6: exam.GetExamByIDResponse
+	(*UpdateExamRequest)(nil),   // 7: exam.UpdateExamRequest
+	(*UpdateExamResponse)(nil),  // 8: exam.UpdateExamResponse
+	(*DeleteExamRequest)(nil),   // 9: exam.DeleteExamRequest
+	(*DeleteExamResponse)(nil),  // 10: exam.DeleteExamResponse
 }
 var file_proto_exam_exam_proto_depIdxs = []int32{
-	0,  // 0: exam.CreateContentResponse.content:type_name -> exam.Content
-	0,  // 1: exam.GetContentListResponse.contents:type_name -> exam.Content
-	0,  // 2: exam.GetContentByIDResponse.content:type_name -> exam.Content
-	0,  // 3: exam.UpdateContentResponse.content:type_name -> exam.Content
-	1,  // 4: exam.ContentService.CreateContent:input_type -> exam.CreateContentRequest
-	3,  // 5: exam.ContentService.GetContentList:input_type -> exam.GetContentListRequest
-	5,  // 6: exam.ContentService.GetContentByID:input_type -> exam.GetContentByIDRequest
-	7,  // 7: exam.ContentService.UpdateContent:input_type -> exam.UpdateContentRequest
-	9,  // 8: exam.ContentService.DeleteContent:input_type -> exam.DeleteContentRequest
-	2,  // 9: exam.ContentService.CreateContent:output_type -> exam.CreateContentResponse
-	4,  // 10: exam.ContentService.GetContentList:output_type -> exam.GetContentListResponse
-	6,  // 11: exam.ContentService.GetContentByID:output_type -> exam.GetContentByIDResponse
-	8,  // 12: exam.ContentService.UpdateContent:output_type -> exam.UpdateContentResponse
-	10, // 13: exam.ContentService.DeleteContent:output_type -> exam.DeleteContentResponse
+	0,  // 0: exam.CreateExamResponse.exam:type_name -> exam.Exam
+	0,  // 1: exam.GetExamListResponse.exams:type_name -> exam.Exam
+	0,  // 2: exam.GetExamByIDResponse.exam:type_name -> exam.Exam
+	0,  // 3: exam.UpdateExamResponse.exam:type_name -> exam.Exam
+	1,  // 4: exam.ExamService.CreateExam:input_type -> exam.CreateExamRequest
+	3,  // 5: exam.ExamService.GetExamList:input_type -> exam.GetExamListRequest
+	5,  // 6: exam.ExamService.GetExamByID:input_type -> exam.GetExamByIDRequest
+	7,  // 7: exam.ExamService.UpdateExam:input_type -> exam.UpdateExamRequest
+	9,  // 8: exam.ExamService.DeleteExam:input_type -> exam.DeleteExamRequest
+	2,  // 9: exam.ExamService.CreateExam:output_type -> exam.CreateExamResponse
+	4,  // 10: exam.ExamService.GetExamList:output_type -> exam.GetExamListResponse
+	6,  // 11: exam.ExamService.GetExamByID:output_type -> exam.GetExamByIDResponse
+	8,  // 12: exam.ExamService.UpdateExam:output_type -> exam.UpdateExamResponse
+	10, // 13: exam.ExamService.DeleteExam:output_type -> exam.DeleteExamResponse
 	9,  // [9:14] is the sub-list for method output_type
 	4,  // [4:9] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name

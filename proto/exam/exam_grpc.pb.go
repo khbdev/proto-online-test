@@ -19,253 +19,253 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ContentService_CreateContent_FullMethodName  = "/exam.ContentService/CreateContent"
-	ContentService_GetContentList_FullMethodName = "/exam.ContentService/GetContentList"
-	ContentService_GetContentByID_FullMethodName = "/exam.ContentService/GetContentByID"
-	ContentService_UpdateContent_FullMethodName  = "/exam.ContentService/UpdateContent"
-	ContentService_DeleteContent_FullMethodName  = "/exam.ContentService/DeleteContent"
+	ExamService_CreateExam_FullMethodName  = "/exam.ExamService/CreateExam"
+	ExamService_GetExamList_FullMethodName = "/exam.ExamService/GetExamList"
+	ExamService_GetExamByID_FullMethodName = "/exam.ExamService/GetExamByID"
+	ExamService_UpdateExam_FullMethodName  = "/exam.ExamService/UpdateExam"
+	ExamService_DeleteExam_FullMethodName  = "/exam.ExamService/DeleteExam"
 )
 
-// ContentServiceClient is the client API for ContentService service.
+// ExamServiceClient is the client API for ExamService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ContentServiceClient interface {
-	CreateContent(ctx context.Context, in *CreateContentRequest, opts ...grpc.CallOption) (*CreateContentResponse, error)
-	GetContentList(ctx context.Context, in *GetContentListRequest, opts ...grpc.CallOption) (*GetContentListResponse, error)
-	GetContentByID(ctx context.Context, in *GetContentByIDRequest, opts ...grpc.CallOption) (*GetContentByIDResponse, error)
-	UpdateContent(ctx context.Context, in *UpdateContentRequest, opts ...grpc.CallOption) (*UpdateContentResponse, error)
-	DeleteContent(ctx context.Context, in *DeleteContentRequest, opts ...grpc.CallOption) (*DeleteContentResponse, error)
+type ExamServiceClient interface {
+	CreateExam(ctx context.Context, in *CreateExamRequest, opts ...grpc.CallOption) (*CreateExamResponse, error)
+	GetExamList(ctx context.Context, in *GetExamListRequest, opts ...grpc.CallOption) (*GetExamListResponse, error)
+	GetExamByID(ctx context.Context, in *GetExamByIDRequest, opts ...grpc.CallOption) (*GetExamByIDResponse, error)
+	UpdateExam(ctx context.Context, in *UpdateExamRequest, opts ...grpc.CallOption) (*UpdateExamResponse, error)
+	DeleteExam(ctx context.Context, in *DeleteExamRequest, opts ...grpc.CallOption) (*DeleteExamResponse, error)
 }
 
-type contentServiceClient struct {
+type examServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewContentServiceClient(cc grpc.ClientConnInterface) ContentServiceClient {
-	return &contentServiceClient{cc}
+func NewExamServiceClient(cc grpc.ClientConnInterface) ExamServiceClient {
+	return &examServiceClient{cc}
 }
 
-func (c *contentServiceClient) CreateContent(ctx context.Context, in *CreateContentRequest, opts ...grpc.CallOption) (*CreateContentResponse, error) {
+func (c *examServiceClient) CreateExam(ctx context.Context, in *CreateExamRequest, opts ...grpc.CallOption) (*CreateExamResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CreateContentResponse)
-	err := c.cc.Invoke(ctx, ContentService_CreateContent_FullMethodName, in, out, cOpts...)
+	out := new(CreateExamResponse)
+	err := c.cc.Invoke(ctx, ExamService_CreateExam_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *contentServiceClient) GetContentList(ctx context.Context, in *GetContentListRequest, opts ...grpc.CallOption) (*GetContentListResponse, error) {
+func (c *examServiceClient) GetExamList(ctx context.Context, in *GetExamListRequest, opts ...grpc.CallOption) (*GetExamListResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetContentListResponse)
-	err := c.cc.Invoke(ctx, ContentService_GetContentList_FullMethodName, in, out, cOpts...)
+	out := new(GetExamListResponse)
+	err := c.cc.Invoke(ctx, ExamService_GetExamList_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *contentServiceClient) GetContentByID(ctx context.Context, in *GetContentByIDRequest, opts ...grpc.CallOption) (*GetContentByIDResponse, error) {
+func (c *examServiceClient) GetExamByID(ctx context.Context, in *GetExamByIDRequest, opts ...grpc.CallOption) (*GetExamByIDResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetContentByIDResponse)
-	err := c.cc.Invoke(ctx, ContentService_GetContentByID_FullMethodName, in, out, cOpts...)
+	out := new(GetExamByIDResponse)
+	err := c.cc.Invoke(ctx, ExamService_GetExamByID_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *contentServiceClient) UpdateContent(ctx context.Context, in *UpdateContentRequest, opts ...grpc.CallOption) (*UpdateContentResponse, error) {
+func (c *examServiceClient) UpdateExam(ctx context.Context, in *UpdateExamRequest, opts ...grpc.CallOption) (*UpdateExamResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UpdateContentResponse)
-	err := c.cc.Invoke(ctx, ContentService_UpdateContent_FullMethodName, in, out, cOpts...)
+	out := new(UpdateExamResponse)
+	err := c.cc.Invoke(ctx, ExamService_UpdateExam_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *contentServiceClient) DeleteContent(ctx context.Context, in *DeleteContentRequest, opts ...grpc.CallOption) (*DeleteContentResponse, error) {
+func (c *examServiceClient) DeleteExam(ctx context.Context, in *DeleteExamRequest, opts ...grpc.CallOption) (*DeleteExamResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DeleteContentResponse)
-	err := c.cc.Invoke(ctx, ContentService_DeleteContent_FullMethodName, in, out, cOpts...)
+	out := new(DeleteExamResponse)
+	err := c.cc.Invoke(ctx, ExamService_DeleteExam_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ContentServiceServer is the server API for ContentService service.
-// All implementations must embed UnimplementedContentServiceServer
+// ExamServiceServer is the server API for ExamService service.
+// All implementations must embed UnimplementedExamServiceServer
 // for forward compatibility.
-type ContentServiceServer interface {
-	CreateContent(context.Context, *CreateContentRequest) (*CreateContentResponse, error)
-	GetContentList(context.Context, *GetContentListRequest) (*GetContentListResponse, error)
-	GetContentByID(context.Context, *GetContentByIDRequest) (*GetContentByIDResponse, error)
-	UpdateContent(context.Context, *UpdateContentRequest) (*UpdateContentResponse, error)
-	DeleteContent(context.Context, *DeleteContentRequest) (*DeleteContentResponse, error)
-	mustEmbedUnimplementedContentServiceServer()
+type ExamServiceServer interface {
+	CreateExam(context.Context, *CreateExamRequest) (*CreateExamResponse, error)
+	GetExamList(context.Context, *GetExamListRequest) (*GetExamListResponse, error)
+	GetExamByID(context.Context, *GetExamByIDRequest) (*GetExamByIDResponse, error)
+	UpdateExam(context.Context, *UpdateExamRequest) (*UpdateExamResponse, error)
+	DeleteExam(context.Context, *DeleteExamRequest) (*DeleteExamResponse, error)
+	mustEmbedUnimplementedExamServiceServer()
 }
 
-// UnimplementedContentServiceServer must be embedded to have
+// UnimplementedExamServiceServer must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedContentServiceServer struct{}
+type UnimplementedExamServiceServer struct{}
 
-func (UnimplementedContentServiceServer) CreateContent(context.Context, *CreateContentRequest) (*CreateContentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateContent not implemented")
+func (UnimplementedExamServiceServer) CreateExam(context.Context, *CreateExamRequest) (*CreateExamResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateExam not implemented")
 }
-func (UnimplementedContentServiceServer) GetContentList(context.Context, *GetContentListRequest) (*GetContentListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetContentList not implemented")
+func (UnimplementedExamServiceServer) GetExamList(context.Context, *GetExamListRequest) (*GetExamListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetExamList not implemented")
 }
-func (UnimplementedContentServiceServer) GetContentByID(context.Context, *GetContentByIDRequest) (*GetContentByIDResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetContentByID not implemented")
+func (UnimplementedExamServiceServer) GetExamByID(context.Context, *GetExamByIDRequest) (*GetExamByIDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetExamByID not implemented")
 }
-func (UnimplementedContentServiceServer) UpdateContent(context.Context, *UpdateContentRequest) (*UpdateContentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateContent not implemented")
+func (UnimplementedExamServiceServer) UpdateExam(context.Context, *UpdateExamRequest) (*UpdateExamResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateExam not implemented")
 }
-func (UnimplementedContentServiceServer) DeleteContent(context.Context, *DeleteContentRequest) (*DeleteContentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteContent not implemented")
+func (UnimplementedExamServiceServer) DeleteExam(context.Context, *DeleteExamRequest) (*DeleteExamResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteExam not implemented")
 }
-func (UnimplementedContentServiceServer) mustEmbedUnimplementedContentServiceServer() {}
-func (UnimplementedContentServiceServer) testEmbeddedByValue()                        {}
+func (UnimplementedExamServiceServer) mustEmbedUnimplementedExamServiceServer() {}
+func (UnimplementedExamServiceServer) testEmbeddedByValue()                     {}
 
-// UnsafeContentServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ContentServiceServer will
+// UnsafeExamServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ExamServiceServer will
 // result in compilation errors.
-type UnsafeContentServiceServer interface {
-	mustEmbedUnimplementedContentServiceServer()
+type UnsafeExamServiceServer interface {
+	mustEmbedUnimplementedExamServiceServer()
 }
 
-func RegisterContentServiceServer(s grpc.ServiceRegistrar, srv ContentServiceServer) {
-	// If the following call pancis, it indicates UnimplementedContentServiceServer was
+func RegisterExamServiceServer(s grpc.ServiceRegistrar, srv ExamServiceServer) {
+	// If the following call pancis, it indicates UnimplementedExamServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ContentService_ServiceDesc, srv)
+	s.RegisterService(&ExamService_ServiceDesc, srv)
 }
 
-func _ContentService_CreateContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateContentRequest)
+func _ExamService_CreateExam_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateExamRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContentServiceServer).CreateContent(ctx, in)
+		return srv.(ExamServiceServer).CreateExam(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ContentService_CreateContent_FullMethodName,
+		FullMethod: ExamService_CreateExam_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContentServiceServer).CreateContent(ctx, req.(*CreateContentRequest))
+		return srv.(ExamServiceServer).CreateExam(ctx, req.(*CreateExamRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContentService_GetContentList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetContentListRequest)
+func _ExamService_GetExamList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetExamListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContentServiceServer).GetContentList(ctx, in)
+		return srv.(ExamServiceServer).GetExamList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ContentService_GetContentList_FullMethodName,
+		FullMethod: ExamService_GetExamList_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContentServiceServer).GetContentList(ctx, req.(*GetContentListRequest))
+		return srv.(ExamServiceServer).GetExamList(ctx, req.(*GetExamListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContentService_GetContentByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetContentByIDRequest)
+func _ExamService_GetExamByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetExamByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContentServiceServer).GetContentByID(ctx, in)
+		return srv.(ExamServiceServer).GetExamByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ContentService_GetContentByID_FullMethodName,
+		FullMethod: ExamService_GetExamByID_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContentServiceServer).GetContentByID(ctx, req.(*GetContentByIDRequest))
+		return srv.(ExamServiceServer).GetExamByID(ctx, req.(*GetExamByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContentService_UpdateContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateContentRequest)
+func _ExamService_UpdateExam_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateExamRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContentServiceServer).UpdateContent(ctx, in)
+		return srv.(ExamServiceServer).UpdateExam(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ContentService_UpdateContent_FullMethodName,
+		FullMethod: ExamService_UpdateExam_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContentServiceServer).UpdateContent(ctx, req.(*UpdateContentRequest))
+		return srv.(ExamServiceServer).UpdateExam(ctx, req.(*UpdateExamRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ContentService_DeleteContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteContentRequest)
+func _ExamService_DeleteExam_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteExamRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ContentServiceServer).DeleteContent(ctx, in)
+		return srv.(ExamServiceServer).DeleteExam(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ContentService_DeleteContent_FullMethodName,
+		FullMethod: ExamService_DeleteExam_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ContentServiceServer).DeleteContent(ctx, req.(*DeleteContentRequest))
+		return srv.(ExamServiceServer).DeleteExam(ctx, req.(*DeleteExamRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ContentService_ServiceDesc is the grpc.ServiceDesc for ContentService service.
+// ExamService_ServiceDesc is the grpc.ServiceDesc for ExamService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ContentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "exam.ContentService",
-	HandlerType: (*ContentServiceServer)(nil),
+var ExamService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "exam.ExamService",
+	HandlerType: (*ExamServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CreateContent",
-			Handler:    _ContentService_CreateContent_Handler,
+			MethodName: "CreateExam",
+			Handler:    _ExamService_CreateExam_Handler,
 		},
 		{
-			MethodName: "GetContentList",
-			Handler:    _ContentService_GetContentList_Handler,
+			MethodName: "GetExamList",
+			Handler:    _ExamService_GetExamList_Handler,
 		},
 		{
-			MethodName: "GetContentByID",
-			Handler:    _ContentService_GetContentByID_Handler,
+			MethodName: "GetExamByID",
+			Handler:    _ExamService_GetExamByID_Handler,
 		},
 		{
-			MethodName: "UpdateContent",
-			Handler:    _ContentService_UpdateContent_Handler,
+			MethodName: "UpdateExam",
+			Handler:    _ExamService_UpdateExam_Handler,
 		},
 		{
-			MethodName: "DeleteContent",
-			Handler:    _ContentService_DeleteContent_Handler,
+			MethodName: "DeleteExam",
+			Handler:    _ExamService_DeleteExam_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

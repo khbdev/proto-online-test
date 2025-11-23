@@ -4,60 +4,60 @@ package exam;
 
 option go_package = "github.com/khbdev/proto-online-test/proto/exam;exampb";
 
-message Content {
+message Exam {
   uint64 id = 1;
   string title = 2;
   string description = 3;
   repeated uint64 section_ids = 4; 
 }
 
-message CreateContentRequest {
+message CreateExamRequest {
   string title = 1;
   string description = 2;
   repeated uint64 section_ids = 3;
 }
 
-message CreateContentResponse {
-  Content content = 1;
+message CreateExamResponse {
+  Exam exam = 1;
 }
 
-message GetContentListRequest {}
+message GetExamListRequest {}
 
-message GetContentListResponse {
-  repeated Content contents = 1;
+message GetExamListResponse {
+  repeated Exam exams = 1;
 }
 
-message GetContentByIDRequest {
+message GetExamByIDRequest {
   uint64 id = 1;
 }
 
-message GetContentByIDResponse {
-  Content content = 1;
+message GetExamByIDResponse {
+  Exam exam = 1;
 }
 
-message UpdateContentRequest {
+message UpdateExamRequest {
   uint64 id = 1;
   string title = 2;
   string description = 3;
   repeated uint64 section_ids = 4;
 }
 
-message UpdateContentResponse {
-  Content content = 1;
+message UpdateExamResponse {
+  Exam exam = 1;
 }
 
-message DeleteContentRequest {
+message DeleteExamRequest {
   uint64 id = 1;
 }
 
-message DeleteContentResponse {
+message DeleteExamResponse {
   bool success = 1;
 }
 
-service ContentService {
-  rpc CreateContent(CreateContentRequest) returns (CreateContentResponse);
-  rpc GetContentList(GetContentListRequest) returns (GetContentListResponse);
-  rpc GetContentByID(GetContentByIDRequest) returns (GetContentByIDResponse);
-  rpc UpdateContent(UpdateContentRequest) returns (UpdateContentResponse);
-  rpc DeleteContent(DeleteContentRequest) returns (DeleteContentResponse);
+service ExamService {
+  rpc CreateExam(CreateExamRequest) returns (CreateExamResponse);
+  rpc GetExamList(GetExamListRequest) returns (GetExamListResponse);
+  rpc GetExamByID(GetExamByIDRequest) returns (GetExamByIDResponse);
+  rpc UpdateExam(UpdateExamRequest) returns (UpdateExamResponse);
+  rpc DeleteExam(DeleteExamRequest) returns (DeleteExamResponse);
 }
